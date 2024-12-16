@@ -28,13 +28,13 @@ pipeline {
             }
         }
 
-        stage('build') {
+        stage('buildjava') {
             steps {
                 echo 'Compiling the java source code'
                 sh 'javac Hello.java'
             }
         }
-        stage('run') {
+        stage('runjava') {
             steps {
                 echo 'Running the compiled java code.'
                 sh 'java Hello'
