@@ -14,5 +14,18 @@ pipeline {
                 sh 'python3 pipeline.py'
             }
         }
+        stage ('build-java') {
+            steps {
+                echo 'Compiling the java source code'
+                sh 'javac Hello.java'
+            }
+        }
+        stage ('run-java') {
+            steps {
+                echo 'Running the compiled java code.'
+                sh 'java Hello'
+            }
+        }
+
     }
 }
